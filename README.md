@@ -15,8 +15,6 @@ pip install pymysql
 **Now tkinter, pillow, pymysql libraries are installed in your PC.**
 
 • Copy the content of the Details.sql
-```
-```
 • Paste it in the MySQL Client
 ```
 CREATE DATABASE `Details`;
