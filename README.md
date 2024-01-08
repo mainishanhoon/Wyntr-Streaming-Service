@@ -849,4 +849,5 @@ INSERT INTO `media` (`ID`, `Title`, `Genre`, `Type`, `IMDb`, `Certificate`, `Str
 
 ```
 **Now Database has been created.**
--> Run the Wyntr Streaming Service.py file
+
+• Run the Wyntr Streaming Service.py file
