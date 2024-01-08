@@ -4,18 +4,26 @@
 ```
 pip install tk
 ```
-•Install pillow
+• Install pillow
 ```
 pip install pillow
 ```
-•Install pymysql
+• Install pymysql
 ```
 pip install pymysql
 ```
 **Now tkinter, pillow, pymysql libraries are installed in your PC.**
-•Copy the content of the Details.sql
-•Paste it in the MySQL Client
+```
+```
+• Copy the content of the Details.sql
+```
+```
+• Paste it in the MySQL Client
+```
+```
 **Now Database has been created.**
-•Run the Wyntr Streaming Service.py file
+```
+```
+• Run the Wyntr Streaming Service.py file
 
 -> Feel free to contribute to the project.
