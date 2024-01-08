@@ -14,7 +14,6 @@ pip install pymysql
 ```
 **Now tkinter, pillow, pymysql libraries are installed in your PC.**
 ```
-```
 • Copy the content of the Details.sql
 ```
 ```
@@ -851,8 +850,4 @@ INSERT INTO `media` (`ID`, `Title`, `Genre`, `Type`, `IMDb`, `Certificate`, `Str
 
 ```
 **Now Database has been created.**
-```
-```
-• Run the Wyntr Streaming Service.py file
-
--> Feel free to contribute to the project.
+-> Run the Wyntr Streaming Service.py file
