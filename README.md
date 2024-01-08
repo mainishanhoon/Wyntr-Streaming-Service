@@ -1,2 +1,21 @@
 # Wyntr-Streaming-Services
-I developed this application for my final project of boards using the Tkinter package, which serves as the standard Python interface to the Tcl/Tk GUI toolkit. The application is dynamic in nature, and I utilised a connection between Python and MySQL to store and manage data. Review the synopsis to gain an understanding of the project.
+**To run this Application in your System follow the given steps:**
+•Install tkinter
+```
+pip install tk
+```
+•Install pillow
+```
+pip install pillow
+```
+•Install pymysql
+```
+pip install pymysql
+```
+**Now tkinter, pillow, pymysql libraries are installed in your PC.**
+• Copy the content of the Details.sql
+• Paste it in the MySQL Client
+**Now Database has been created.**
+• Run the Wyntr Streaming Service.py file
+
+-> Feel free to contribute to the project.
