@@ -1,5 +1,6 @@
-# Wyntr-Streaming-Services
+# Wyntr Streaming Services
 **To run this Application in your System follow the given steps:**
+
 • Install tkinter
 ```
 pip install tk
