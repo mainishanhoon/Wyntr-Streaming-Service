@@ -7,9 +7,11 @@
 **Signing In**
       
 ![account_table](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/abe5688a-8a05-4190-90bd-40a6b55b780f)
+
 **Accounts Table**
       
 ![media_table](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/3976d8a0-f381-4fe3-8b9b-c15fd4d8e7b2)
+
 **Media Table**
       
 ![User Interface](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/98b9dbc3-27e8-44ae-9d5a-3a9261d6a3d1)
