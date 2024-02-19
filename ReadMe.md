@@ -1,10 +1,11 @@
 # Wyntr Streaming Services
 
 **Registration**
-![Register](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/77469e3b-812a-44a2-b451-5b4335823884)
+![Registration](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/4e5bde68-724f-4e03-a0d0-01f84d08d50a)
+
 
 **Signing In**  
-![Sign In](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/8b1be4de-a36f-47e3-ba99-91c8ceac77db)
+![Signing In](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/7fb3bba3-bc45-45dc-af5e-7dbd8dd3da5d)
 
 **Accounts Table**    
 ![account_table](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/abe5688a-8a05-4190-90bd-40a6b55b780f)
@@ -12,11 +13,20 @@
 **Media Table**     
 ![media_table](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/3976d8a0-f381-4fe3-8b9b-c15fd4d8e7b2)
 
-**User Interface**    
+###User Interface    
 ![User Interface](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/98b9dbc3-27e8-44ae-9d5a-3a9261d6a3d1)
 
 **Developer Interface**
 ![Developer Interface](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/ebf2c8a5-b4b3-49c7-b13b-9194685c3c6d)
+
+**Media Not Found**
+![Media Not Found](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/56e5106c-830b-40cf-b770-1af402383a7d)
+
+##Fetching the URL
+![Fetching the URL](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/bd18dd1f-a78b-4c82-8419-956bc949ed0e)
+
+##Filtering on the Basis of Genre
+![Filtering on the Basis of Genre](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/5ccc9e2c-8960-4842-a6f6-73cd4d53f6ef)
 
 **To run this Application in your System follow the given steps:**
 
