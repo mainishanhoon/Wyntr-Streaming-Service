@@ -1,50 +1,49 @@
 # Wyntr Streaming Services
 
-**Registration**
+### Registration
 ![Registration](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/4e5bde68-724f-4e03-a0d0-01f84d08d50a)
 
-
-**Signing In**  
+### Signing In
 ![Signing In](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/7fb3bba3-bc45-45dc-af5e-7dbd8dd3da5d)
 
-**Accounts Table**    
+### Accounts Table    
 ![account_table](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/abe5688a-8a05-4190-90bd-40a6b55b780f)
 
-**Media Table**     
+### Media Table
 ![media_table](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/3976d8a0-f381-4fe3-8b9b-c15fd4d8e7b2)
 
 ### User Interface    
 ![User Interface](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/98b9dbc3-27e8-44ae-9d5a-3a9261d6a3d1)
 
-**Developer Interface**
+### Developer Interface
 ![Developer Interface](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/ebf2c8a5-b4b3-49c7-b13b-9194685c3c6d)
 
-**Media Not Found**
+### Media Not Found
 ![Media Not Found](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/56e5106c-830b-40cf-b770-1af402383a7d)
 
-## Fetching the URL
+### Fetching the URL
 ![Fetching the URL](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/bd18dd1f-a78b-4c82-8419-956bc949ed0e)
 
-## Filtering on the Basis of Genre
+### Filtering on the Basis of Genre
 ![Filtering on the Basis of Genre](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/5ccc9e2c-8960-4842-a6f6-73cd4d53f6ef)
 
-**To run this Application in your System follow the given steps:**
+## To run this Application in your System follow the given steps:
 
-• Install tkinter
+**• Install tkinter**
 ```
 pip install tk
 ```
-• Install pillow
+**• Install pillow**
 ```
 pip install pillow
 ```
-• Install pymysql
+**• Install pymysql**
 ```
 pip install pymysql
 ```
 **Now tkinter, pillow, pymysql libraries are installed in your PC.**
 
-• Paste these lines into your MySQL client.
+**• Paste these lines into your MySQL client.**
 ```
 CREATE DATABASE `Details`;
 USE `Details`;
@@ -372,6 +371,6 @@ INSERT INTO `media` (`ID`, `Title`, `Genre`, `Type`, `IMDb`, `Certificate`, `Str
 	('ZYSOT4', 'The Girl Who Leapt Through Time', 'Drama', 'Anime', '6.9', 'U', 'VOOT', 'Makoto Konno is a somewhat foolish and tomboyish high school student who spends most of her time hanging out with her two male friends. Things change one day when she suddenly gains the ability to leap through time! At first, she uses her newfound ability to do things such as preventing her sister from stealing her dessert, cheating on a test, and singing Karaoke for 10 hours. However, the small alterations she makes to the timeline turn out to have unforeseen consequences that snowball into dramatic and lethal situations for her and those around her...', '');
 
 ```
-**Now Database has been created.**
+### Now Database has been created.
 
-• Run the Wyntr Streaming Service.py file
+**• Run the Wyntr Streaming Service.py file**
