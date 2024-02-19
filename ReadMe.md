@@ -13,7 +13,7 @@
 **Media Table**     
 ![media_table](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/3976d8a0-f381-4fe3-8b9b-c15fd4d8e7b2)
 
-###User Interface    
+### User Interface    
 ![User Interface](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/98b9dbc3-27e8-44ae-9d5a-3a9261d6a3d1)
 
 **Developer Interface**
@@ -22,10 +22,10 @@
 **Media Not Found**
 ![Media Not Found](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/56e5106c-830b-40cf-b770-1af402383a7d)
 
-##Fetching the URL
+## Fetching the URL
 ![Fetching the URL](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/bd18dd1f-a78b-4c82-8419-956bc949ed0e)
 
-##Filtering on the Basis of Genre
+## Filtering on the Basis of Genre
 ![Filtering on the Basis of Genre](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/5ccc9e2c-8960-4842-a6f6-73cd4d53f6ef)
 
 **To run this Application in your System follow the given steps:**
