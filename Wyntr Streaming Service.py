@@ -1,4 +1,4 @@
-import tkinter, pymysql, webbrowser, time
+import tkinter, pymysql, webbrowser
 
 from tkinter import *
 
@@ -177,9 +177,6 @@ class Wynter :
 		self.Addbtn = PhotoImage(file = "Images/Sign_Out.png")
 		btn = Button(Title_Frame, image = self.Addbtn, bd = 0, cursor = "hand2", relief = FLAT, command = self.SignOut)
 		btn.place(x = 1484, y = 11, width = 40, height = 40)
-
-		#Developers = Label(Title_Frame, text = "Developers : Nishan, Rishu, Yogesh",bd = 0, font = ("Bafora Demo", 20, 'bold'), bg = "#ECB365", fg = "#800000")
-		#Developers.place(x =1178, y = 52, height = 30, width = 350)
 
 #*:..。o○☆○o。..:*゜*:..。o○☆○o。ALL VARIABLES ..:*゜*:..。o○☆○o。..:*゜*:..。o○☆○o。..:*
 
@@ -490,7 +487,7 @@ class Wynter :
 		Title_Frame = Frame(self.root, bd = 0, bg = "#FFE6BC")
 		Title_Frame.place(x = 0, y= 0, width = 1535.5, height = 95)
 
-		Title = Label(Title_Frame, text = "Wyntr Streaming Service", bd = 8, relief = RIDGE, font = ("Product Sans", 50, "bold"), bg = "#ECB365", fg = "#630000")
+		Title = Label(Title_Frame, text = "𝕎𝕪𝕟𝕥𝕣 𝕊𝕥𝕣𝕖𝕒𝕞𝕚𝕟𝕘 𝕊𝕖𝕣𝕧𝕚𝕔𝕖", bd = 8, relief = RIDGE, font = ("Product Sans", 50, "bold"), bg = "#ECB365", fg = "#630000")
 		Title.place(x =0, y = 0, height = 90, width = 1535.5)
 
 		Logo_Frame = Frame(self.root, bd = 0, bg = "#ffffff")
