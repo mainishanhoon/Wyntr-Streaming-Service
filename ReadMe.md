@@ -373,4 +373,8 @@ INSERT INTO `media` (`ID`, `Title`, `Genre`, `Type`, `IMDb`, `Certificate`, `Str
 ```
 ### Now Database has been created.
 
-**• Run the Wyntr Streaming Service.py file**
+**•In Wyntr Streaming Service.py file, replace the password in line 61 & 134 with your MySQL password.**
+
+### Now connection between Pyhton & MySQL has been established.
+
+**•Run the Wyntr Streaming Service.py file**
