@@ -6,7 +6,7 @@ from tkinter import ttk, messagebox
 
 from PIL import ImageTk
 
-class Wynter :
+class Wyntr :
 	def __init__(self, root) :
 		self.root = root
 		self.root.title("Wyntr Streaming Service")
@@ -630,5 +630,5 @@ class Wynter :
 #════ ⋆★⋆ ════════ ⋆★⋆ ════════ ⋆★⋆ ════════ ⋆★⋆FUNCTION⋆★⋆ ════════ ⋆★⋆ ════════ ⋆★⋆ ════════ ⋆★⋆ ════
 			
 root = Tk()
-obj = Wynter(root)
+obj = Wyntr(root)
 root.mainloop()
