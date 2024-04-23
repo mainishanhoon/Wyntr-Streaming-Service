@@ -29,7 +29,7 @@
 
 ## To run this Application in your System follow the given steps:
 
-**Install all the Fonts Given in the "Fonts" Folder**
+**• Install all the Fonts from the "Fonts" Folder**
 
 **• Install tkinter**
 ```
