@@ -29,6 +29,8 @@
 
 ## To run this Application in your System follow the given steps:
 
+**Install all the Fonts Given in the "Fonts" Folder**
+
 **• Install tkinter**
 ```
 pip install tk
