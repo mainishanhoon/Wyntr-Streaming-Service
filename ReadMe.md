@@ -35,7 +35,7 @@ https://github.com/mainishanhoon/Wyntr-Streaming-Service.git
 **• Install all the Fonts from the "Fonts" Folder.**
 
 **• Install tkinter**
-``` bash
+``` console
 pip install tk
 ```
 **• Install pillow**
