@@ -28,25 +28,28 @@
 ![Filtering on the Basis of Genre](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/5ccc9e2c-8960-4842-a6f6-73cd4d53f6ef)
 
 ## To run this Application in your System follow the given steps:
-
+**• Clone the repository.**
+``` console
+https://github.com/mainishanhoon/Wyntr-Streaming-Service.git
+```
 **• Install all the Fonts from the "Fonts" Folder.**
 
 **• Install tkinter**
-```
+``` console
 pip install tk
 ```
 **• Install pillow**
-```
+``` console
 pip install pillow
 ```
 **• Install pymysql**
-```
+``` console
 pip install pymysql
 ```
 **Now tkinter, pillow, pymysql libraries are installed in your PC.**
 
 **• Paste these lines into your MySQL client.**
-```
+``` sql
 CREATE DATABASE `Details`;
 USE `Details`;
 
