@@ -1,4 +1,4 @@
-deimport tkinter, pymysql, webbrowser
+import tkinter, pymysql, webbrowser
 
 from tkinter import *
 
