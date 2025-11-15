@@ -1,15 +1,18 @@
+from CTkMessagebox import CTkMessagebox
 from customtkinter import CTk, CTkLabel, CTkImage, set_appearance_mode, CTkEntry, CTkButton, CTkFrame
 from PIL import Image
 
 class Wyntr(CTk):
     def __init__(self, width, height):
         super().__init__()
+        self.username = None
         self.width = width
         self.height = height
         self.center_window()
         self.resizable(False, False)
         set_appearance_mode("light")
         self.login_interface()
+        self.iconbitmap("Images/Icon.ico")
         self.title("Wyntr Streaming Service")
 
     def center_window(self):
@@ -31,17 +34,30 @@ class Wyntr(CTk):
         CTkLabel(master=login_frame, text="Sign In", text_color="#834333", font=("Dela Gothic One", 50)).place(x=450, y=25)
 
         CTkLabel(master=login_frame, text="Username", text_color="#954535", font=("Product Sans", 25, "bold")).place(x=450, y=130)
-        CTkEntry(master=login_frame, placeholder_text="Enter Your Username...", placeholder_text_color="#C19A6B", border_width=2, fg_color="#F3C892", border_color="#834333", font=("Product Sans", 15, "bold"), corner_radius=10, width=300, height=30, text_color="#834333").place(x=450, y=165)
+        self.username=CTkEntry(master=login_frame, placeholder_text="Enter Your Username...", placeholder_text_color="#C19A6B", border_width=2, fg_color="#F3C892", border_color="#834333", font=("Product Sans", 15, "bold"), corner_radius=10, width=300, height=30, text_color="#834333")
+        self.username.place(x=450, y=165)
 
         CTkLabel(master=login_frame, text="Password", text_color="#954535", font=("Product Sans", 25, "bold")).place(x=450, y=210)
-        CTkEntry(master=login_frame, placeholder_text="Enter Password...", placeholder_text_color="#C19A6B", border_width=2, fg_color="#F3C892", border_color="#834333", font=("Product Sans", 15, "bold"), show="*", corner_radius=10, width=300, height=30, text_color="#834333").place(x=450, y=245)
+        self.password=CTkEntry(master=login_frame, placeholder_text="Enter Password...", placeholder_text_color="#C19A6B", border_width=2, fg_color="#F3C892", border_color="#834333", font=("Product Sans", 15, "bold"), show="*", corner_radius=10, width=300, height=30, text_color="#834333")
+        self.password.place(x=450, y=245)
 
-        CTkButton(master=login_frame, text="LOGIN", font=("Dela Gothic One", 15), fg_color="#954535", hover_color="#7B3F00", cursor='hand2', hover=True, height=36, width=110).place(x=450, y=310)
+        CTkButton(master=login_frame, text="LOGIN", command=self.Login, font=("Dela Gothic One", 15), fg_color="#954535", hover_color="#7B3F00", cursor='hand2', hover=True, height=36, width=110).place(x=450, y=310)
 
         CTkLabel(master=login_frame, text="Don't Have an Account?", font=("Product Sans", 15, "bold"), bg_color="#E5AA70", text_color="#834333").place(x=675, y=280)
 
         CTkButton(master=login_frame, text="SIGN UP", font=("Dela Gothic One", 15), fg_color="#954535", hover_color="#7B3F00", cursor='hand2', hover=True, height=36, width=120).place(x=695, y=310)
 
+        self.bind('<Return>',lambda event:self.Login)
+
+    def Login(self):
+        if self.username.get() == "" and self.password.get() == "":
+            CTkMessagebox(title="Wyntr Streaming Service", message="Enter Username & Password.", font=("Product Sans", 15, "bold"), wraplength=300, fg_color="#DAA06D", icon="info", option_1="OKAY", option_focus=1, justify="center", fade_in_duration=2, button_color="#954535", button_hover_color="#7B3F00", border_width=3, border_color="#7B3F00", text_color="#834333", title_color="#954535", icon_size=(40,40))
+
+        elif self.username.get() == "":
+            CTkMessagebox(title="Wyntr Streaming Service", message="Enter Username.", icon="warning", option_1="OKAY")
+
+        elif self.password.get() == "":
+            CTkMessagebox(title="Wyntr Streaming Service", message="Enter Password.", icon="warning", option_1="OKAY")
 
 if __name__ == "__main__":
     app = Wyntr(1300, 700)
