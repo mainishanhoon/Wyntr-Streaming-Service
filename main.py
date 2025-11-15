@@ -53,11 +53,11 @@ class Wyntr:
 
         CTkLabel(master=login_frame, text='Don\'t Have an Account?', font=('Product Sans', 15, 'bold'), bg_color='#E5AA70', text_color='#834333').place(x=675, y=280)
 
-        CTkButton(master=login_frame, text='SIGN UP', font=('Dela Gothic One', 15), fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=36, width=120).place(x=695, y=310)
+        CTkButton(master=login_frame, text='SIGN UP', command=self.Registration_Interface, font=('Dela Gothic One', 15), fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=36, width=120).place(x=695, y=310)
 
-        self.root.bind('<Return>', self.Login)
+        self.root.bind('<Return>', lambda event: self.Login())
 
-    def Login(self, event=None):
+    def Login(self):
         if self.username.get() == '' and self.password.get() == '':
             CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Enter Username & Password.', font=('Product Sans', 15, 'bold'), wraplength=300, fg_color='#DAA06D', icon='Icons/info.png', option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1, button_color='#954535', button_hover_color='#7B3F00', border_width=3, border_color='#7B3F00', text_color='#834333', title_color='#954535', icon_size=(40,40))
 
@@ -95,7 +95,7 @@ class Wyntr:
                 print('This is the End')
 
             elif row is None:
-                CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Invalid Username/Password.', font=('Product Sans', 15, 'bold'), wraplength=300, fg_color='#DAA06D', icon='Icons/alert.png', option_1='Sign Up', option_2='Go Back', option_focus=2, justify='center', fade_in_duration=1, button_color='#954535', button_hover_color='#7B3F00', border_width=3, border_color='#7B3F00', text_color='#834333', title_color='#954535', icon_size=(40, 40))
+                CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Invalid Username/Password.', font=('Product Sans', 15, 'bold'), wraplength=300, fg_color='#DAA06D', icon='Icons/alert.png', option_1='Go Back', option_focus=1, justify='center', fade_in_duration=1, button_color='#954535', button_hover_color='#7B3F00', border_width=3, border_color='#7B3F00', text_color='#834333', title_color='#954535', icon_size=(40, 40))
                 self.Login_Clear()
 
             else:
@@ -107,6 +107,109 @@ class Wyntr:
     def Login_Clear(self):
         self.username.delete('0', END)
         self.password.delete('0', END)
+
+    def Registration_Interface(self):
+        CTkLabel(master=self.root, image=CTkImage(light_image=Image.open('Images/Registration.jpg'), size=(1300, 700)), text='').place(x=0,y=0)
+
+        registration_frame = CTkFrame(master=self.root, fg_color='#E5AA70', width=900, height=400)
+        registration_frame.place(x=(1300 - 900) / 2, y=(700 - 400) / 2)
+
+        CTkLabel(master=registration_frame, image=CTkImage(light_image=Image.open('Images/Logo.jpg'), size=(400, 400)), text='').place(x=0, y=0)
+
+        CTkLabel(master=registration_frame, text='Sign Up', text_color='#834333', font=('Dela Gothic One', 50)).place(x=450, y=15)
+        CTkLabel(master=registration_frame, text='Username', text_color='#954535', font=('Product Sans', 15, 'bold')).place(x=450, y=95)
+        self.username = CTkEntry(master=registration_frame, placeholder_text='Enter Your Username...',
+                                 placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
+                                 border_color='#834333', font=('Product Sans', 15, 'bold'), corner_radius=10, width=350,
+                                 height=30, text_color='#834333')
+        self.username.place(x=450, y=120)
+
+        CTkLabel(master=registration_frame, text='First Name', text_color='#954535', font=('Product Sans', 15, 'bold')).place(x=450, y=150)
+        self.firstname = CTkEntry(master=registration_frame, placeholder_text='Enter Your First Name...',
+                                 placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
+                                 border_color='#834333', font=('Product Sans', 15, 'bold'), corner_radius=10, width=350,
+                                 height=30, text_color='#834333')
+        self.firstname.place(x=450, y=175)
+
+        CTkLabel(master=registration_frame, text='Last Name', text_color='#954535', font=('Product Sans', 15, 'bold')).place(x=450, y=205)
+        self.lastname = CTkEntry(master=registration_frame, placeholder_text='Enter Your Last Name...',
+                                 placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
+                                 border_color='#834333', font=('Product Sans', 15, 'bold'), corner_radius=10, width=350,
+                                 height=30, text_color='#834333')
+        self.lastname.place(x=450, y=230)
+
+        CTkLabel(master=registration_frame, text='Password', text_color='#954535', font=('Product Sans', 15, 'bold')).place(x=450, y=260)
+        self.password = CTkEntry(master=registration_frame, placeholder_text='Enter Password...',
+                                 placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
+                                 border_color='#834333', font=('Product Sans', 15, 'bold'), show='*', corner_radius=10,
+                                 width=350, height=30, text_color='#834333')
+        self.password.place(x=450, y=285)
+
+        CTkButton(master=registration_frame, text='REGISTER', command=self.Registration, font=('Dela Gothic One', 15), fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=36, width=135).place(x=450, y=325)
+
+        CTkButton(master=registration_frame, text='BACK', command=self.Login_Interface, font=('Dela Gothic One', 15), fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=36, width=120).place(x=680, y=325)
+
+        self.root.bind('<Return>', lambda event: self.Registration())
+
+    def Registration(self):
+        if self.firstname.get() == "" or self.lastname.get() == "" or self.username.get() == "" or self.password.get() == "":
+            CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Enter the Required Details.',
+                          font=('Product Sans', 15, 'bold'), wraplength=300, fg_color='#DAA06D', icon='Icons/info.png',
+                          option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1,
+                          button_color='#954535', button_hover_color='#7B3F00', border_width=3, border_color='#7B3F00',
+                          text_color='#834333', title_color='#954535', icon_size=(40, 40))
+            self.Registration_Clear()
+
+        else:
+            MySQL_Connector = pymysql.connect(
+                host=os.getenv('DB_HOST'),
+                user=os.getenv('DB_USER'),
+                password=os.getenv('DB_PASSWORD'),
+                database=os.getenv('DB_NAME')
+            )
+
+            cursor = MySQL_Connector.cursor()
+
+            cursor.execute("SELECT * FROM Accounts WHERE Username = %s", self.username.get())
+
+            UserName = cursor.fetchone()
+
+            if UserName is None:
+                cursor.execute(
+                    "INSERT INTO Accounts (First_Name, Last_Name, Username, Email, Password) VALUES (%s,%s,%s,%s,%s)",
+                    (self.firstname.get(),
+                     self.lastname.get(),
+                     self.username.get(),
+                     self.password.get()
+                     ))
+                CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Enter the Required Details.',
+                              font=('Product Sans', 15, 'bold'), wraplength=300, fg_color='#DAA06D',
+                              icon='Icons/info.png',
+                              option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1,
+                              button_color='#954535', button_hover_color='#7B3F00', border_width=3,
+                              border_color='#7B3F00',
+                              text_color='#834333', title_color='#954535', icon_size=(40, 40))
+                # self.Media_Interface()
+
+            else:
+                CTkMessagebox(master=self.root, title='Wyntr Streaming Service',
+                              message='Username already Exists in the DataBase.',
+                              font=('Product Sans', 15, 'bold'), wraplength=300, fg_color='#DAA06D',
+                              icon='Icons/alert.png',
+                              option_1='Go Back', option_focus=1, justify='center', fade_in_duration=1,
+                              button_color='#954535', button_hover_color='#7B3F00', border_width=3,
+                              border_color='#7B3F00',
+                              text_color='#834333', title_color='#954535', icon_size=(40, 40))
+                self.Registration_Clear()
+
+            MySQL_Connector.commit()
+            MySQL_Connector.close()
+
+    def Registration_Clear(self):
+        self.firstname.delete(0, END)
+        self.lastname.delete(0, END)
+        self.username.delete(0, END)
+        self.password.delete(0, END)
 
 root=CTk()
 obj = Wyntr(root)
