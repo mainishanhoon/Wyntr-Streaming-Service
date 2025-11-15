@@ -1,6 +1,11 @@
+import pymysql
 from CTkMessagebox import CTkMessagebox
-from customtkinter import CTk, CTkLabel, CTkImage, set_appearance_mode, CTkEntry, CTkButton, CTkFrame
+from customtkinter import CTk, CTkLabel, CTkImage, set_appearance_mode, CTkEntry, CTkButton, CTkFrame, END
 from PIL import Image
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 class Wyntr:
     def __init__(self, root):
@@ -13,7 +18,7 @@ class Wyntr:
         self.root.title("Wyntr Streaming Service")
 
         self.center_window()
-        self.login_interface()
+        self.Login_Interface()
 
 
     def center_window(self):
@@ -25,7 +30,7 @@ class Wyntr:
 
         self.root.geometry(f"{1300}x{700}+{x}+{y}")
 
-    def login_interface(self):
+    def Login_Interface(self):
         CTkLabel(master=self.root, image=CTkImage(light_image=Image.open("Images/LogIn.png"), size=(1300, 700)), text="").place(x=0,y=0)
 
         login_frame = CTkFrame(master=self.root, fg_color="#E5AA70", width=900, height=400)
@@ -49,18 +54,57 @@ class Wyntr:
 
         CTkButton(master=login_frame, text="SIGN UP", font=("Dela Gothic One", 15), fg_color="#954535", hover_color="#7B3F00", cursor='hand2', hover=True, height=36, width=120).place(x=695, y=310)
 
-        self.root.bind('<Return>',lambda event:self.Login)
+        self.root.bind('<Return>', self.Login)
 
-    def Login(self):
+    def Login(self, event=None):
         if self.username.get() == "" and self.password.get() == "":
             CTkMessagebox(master=self.root, title="Wyntr Streaming Service", message="Enter Username & Password.", font=("Product Sans", 15, "bold"), wraplength=300, fg_color="#DAA06D", icon="info", option_1="OKAY", option_focus=1, justify="center", fade_in_duration=2, button_color="#954535", button_hover_color="#7B3F00", border_width=3, border_color="#7B3F00", text_color="#834333", title_color="#954535", icon_size=(40,40))
 
         elif self.username.get() == "":
-            CTkMessagebox(title="Wyntr Streaming Service", message="Enter Username.", icon="warning", option_1="OKAY")
+            CTkMessagebox(master=self.root, title="Wyntr Streaming Service", message="Enter Username.",
+                          font=("Product Sans", 15, "bold"), wraplength=300, fg_color="#DAA06D", icon="info",
+                          option_1="OKAY", option_focus=1, justify="center", fade_in_duration=2, button_color="#954535",
+                          button_hover_color="#7B3F00", border_width=3, border_color="#7B3F00", text_color="#834333",
+                          title_color="#954535", icon_size=(40, 40))
 
         elif self.password.get() == "":
-            CTkMessagebox(title="Wyntr Streaming Service", message="Enter Password.", icon="warning", option_1="OKAY")
+            CTkMessagebox(master=self.root, title="Wyntr Streaming Service", message="Enter Password.",
+                          font=("Product Sans", 15, "bold"), wraplength=300, fg_color="#DAA06D", icon="Icons/info.png",
+                          option_1="OKAY", option_focus=1, justify="center", fade_in_duration=2, button_color="#954535",
+                          button_hover_color="#7B3F00", border_width=3, border_color="#7B3F00", text_color="#834333",
+                          title_color="#954535", icon_size=(40, 40))
 
+        else:
+            MySQL_Connector = pymysql.connect(
+                host=os.getenv("DB_HOST"),
+                user=os.getenv("DB_USER"),
+                password=os.getenv("DB_PASSWORD"),
+                database=os.getenv("DB_NAME")
+            )
+            cursor = MySQL_Connector.cursor()
+
+            cursor.execute("SELECT * FROM Accounts WHERE Username = %s AND Password = %s",
+                           (self.username.get(), self.password.get()))
+
+            row = cursor.fetchone()
+
+            if self.username.get() == "a" and self.password.get() == "1":
+                # self.Management_Interface()
+                print("hfdhf")
+
+            elif row is None:
+                CTkMessagebox(master=self.root, title="Wyntr Streaming Service", message="Invalid Username/Password.", font=("Product Sans", 15, "bold"), wraplength=300, fg_color="#DAA06D", icon="Icons/alert.png", option_1="Sign Up", option_2="Go Back", option_focus=2, justify="center", fade_in_duration=2, button_color="#954535", button_hover_color="#7B3F00", border_width=3, border_color="#7B3F00", text_color="#834333", title_color="#954535", icon_size=(40, 40))
+                self.Login_Clear()
+
+            else:
+                CTkMessagebox(master=self.root, title="Wyntr Streaming Service", message="Welcome to Wyntr Streaming Service.", font=("Product Sans", 15, "bold"), wraplength=300, fg_color="#DAA06D", icon="Icons/check.png", option_1="OKAY", option_focus=1, justify="center", fade_in_duration=2, button_color="#954535", button_hover_color="#7B3F00", border_width=3, border_color="#7B3F00", text_color="#834333", title_color="#954535", icon_size=(40, 40))
+                # self.Media_Interface()
+
+            MySQL_Connector.close()
+
+    def Login_Clear(self):
+        self.username.delete("0", END)
+        self.password.delete("0", END)
 
 root=CTk()
 obj = Wyntr(root)
