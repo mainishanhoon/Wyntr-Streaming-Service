@@ -18,7 +18,7 @@ class Wyntr:
         self.root.title('Wyntr Streaming Service')
 
         self.center_window()
-        self.Login_Interface()
+        self.Management_Interface()
 
 
     def center_window(self):
@@ -34,7 +34,7 @@ class Wyntr:
     def Login_Interface(self):
         CTkLabel(master=self.root, image=CTkImage(light_image=Image.open('Images/LogIn.png'), size=(1300, 700)), text='').place(x=0,y=0)
 
-        login_frame = CTkFrame(master=self.root, fg_color='#E5AA70', width=900, height=400)
+        login_frame = CTkFrame(master=self.root, fg_color='#E5AA70', bg_color='#E5AA70', width=900, height=400)
         login_frame.place(x=(1300 - 900) / 2, y=(700 - 400) / 2)
 
         CTkLabel(master=login_frame, image=CTkImage(light_image=Image.open('Images/Logo.jpg'), size=(400, 400)), text='').place(x=0, y=0)
@@ -91,12 +91,12 @@ class Wyntr:
             row = cursor.fetchone()
 
             if self.username.get() == 'a' and self.password.get() == '1':
-                # self.Management_Interface()
-                print('This is the End')
+                self.Management_Interface()
 
             elif row is None:
                 CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Invalid Username/Password.', font=('Product Sans', 15, 'bold'), wraplength=300, fg_color='#DAA06D', icon='Icons/alert.png', option_1='Go Back', option_focus=1, justify='center', fade_in_duration=1, button_color='#954535', button_hover_color='#7B3F00', border_width=3, border_color='#7B3F00', text_color='#834333', title_color='#954535', icon_size=(40, 40))
-                self.Login_Clear()
+                self.username.delete('0', END)
+                self.password.delete('0', END)
 
             else:
                 CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Welcome to Wyntr Streaming Service.', font=('Product Sans', 15, 'bold'), wraplength=300, fg_color='#DAA06D', icon='Icons/check.png', option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1, button_color='#954535', button_hover_color='#7B3F00', border_width=3, border_color='#7B3F00', text_color='#834333', title_color='#954535', icon_size=(40, 40))
@@ -104,14 +104,10 @@ class Wyntr:
 
             MySQL_Connector.close()
 
-    def Login_Clear(self):
-        self.username.delete('0', END)
-        self.password.delete('0', END)
-
     def Registration_Interface(self):
         CTkLabel(master=self.root, image=CTkImage(light_image=Image.open('Images/Registration.jpg'), size=(1300, 700)), text='').place(x=0,y=0)
 
-        registration_frame = CTkFrame(master=self.root, fg_color='#E5AA70', width=900, height=400)
+        registration_frame = CTkFrame(master=self.root, fg_color='#E5AA70', bg_color='#E5AA70', width=900, height=400)
         registration_frame.place(x=(1300 - 900) / 2, y=(700 - 400) / 2)
 
         CTkLabel(master=registration_frame, image=CTkImage(light_image=Image.open('Images/Logo.jpg'), size=(400, 400)), text='').place(x=0, y=0)
@@ -158,7 +154,6 @@ class Wyntr:
                           option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1,
                           button_color='#954535', button_hover_color='#7B3F00', border_width=3, border_color='#7B3F00',
                           text_color='#834333', title_color='#954535', icon_size=(40, 40))
-            self.Registration_Clear()
 
         else:
             MySQL_Connector = pymysql.connect(
@@ -200,16 +195,36 @@ class Wyntr:
                               button_color='#954535', button_hover_color='#7B3F00', border_width=3,
                               border_color='#7B3F00',
                               text_color='#834333', title_color='#954535', icon_size=(40, 40))
-                self.Registration_Clear()
+                self.username.delete(0, END)
 
             MySQL_Connector.commit()
             MySQL_Connector.close()
 
-    def Registration_Clear(self):
-        self.firstname.delete(0, END)
-        self.lastname.delete(0, END)
-        self.username.delete(0, END)
-        self.password.delete(0, END)
+    def Management_Interface(self):
+        management_frame = CTkFrame(master=self.root, fg_color='#F3C892', bg_color='#F3C892', width=1300, height=700)
+        management_frame.place(x=0, y=0)
+
+        title_frame = CTkFrame(master=management_frame, fg_color='#E5AA70', bg_color='#F3C892', width=1280, height=80, border_width=2, border_color='#834333')
+        title_frame.place(x=10, y=10)
+
+        CTkLabel(master=title_frame, image=CTkImage(light_image=Image.open('Images/Logo.png'), size=(70, 70)), text='').place(x=50, y=5)
+
+        CTkLabel(master=title_frame, text='Wyntr Streaming Service', text_color='#954535',
+                 font=('Dela Gothic One', 40, 'bold')).place(x=350,y=5)
+
+        CTkButton(master=title_frame, text='', image=CTkImage(light_image=Image.open('Images/Sign_Out.png'),size=(40, 40)), command=self.SignOut, font=('Dela Gothic One', 15), fg_color='#E5AA70', hover_color='#7B3F00', cursor='hand2', hover=False, height=50, width=50).place(x=1170, y=15)
+
+        details_frame = CTkFrame(master=management_frame, fg_color='#E5AA70', bg_color='#F3C892', width=350, height=590, border_width=2, border_color='#834333')
+        details_frame.place(x=10, y=100)
+
+        media_frame = CTkFrame(master=management_frame, fg_color='#E5AA70', bg_color='#F3C892', width=920, height=590, border_width=2, border_color='#834333')
+        media_frame.place(x=370, y=100)
+
+    def SignOut(self):
+        CTkMessagebox(master=self.root, title="Wyntr Streaming Service",message="Thankyou for Using Wyntr Streaming Service!", font=('Product Sans', 15, 'bold'), wraplength=250, fg_color='#DAA06D',
+            icon='Icons/check.png', option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1, button_color='#954535', button_hover_color='#7B3F00', border_width=3, border_color='#7B3F00', text_color='#834333', title_color='#954535', icon_size=(40, 40))
+
+        self.Login_Interface()
 
 root=CTk()
 obj = Wyntr(root)
