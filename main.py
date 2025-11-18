@@ -218,7 +218,7 @@ class Wyntr:
 
         CTkLabel(master=title_frame, image=CTkImage(light_image=Image.open('Images/Logo.png'), size=(70, 70)), text='').place(x=50, y=5)
 
-        CTkLabel(master=title_frame, text='Wyntr Streaming Service', text_color='#954535',
+        CTkLabel(master=title_frame, text='Wyntr Streaming Service', text_color='#7B3F00',
                  font=('Dela Gothic One', 40, 'bold')).place(x=350,y=5)
 
         CTkButton(master=title_frame, text='', image=CTkImage(light_image=Image.open('Images/Sign_Out.png'),size=(35, 35)), command=self.SignOut, font=('Dela Gothic One', 15), fg_color='#E5AA70', hover_color='#7B3F00', cursor='hand2', hover=False, height=30, width=30).place(x=1180, y=20)
@@ -226,22 +226,26 @@ class Wyntr:
         details_frame = CTkFrame(master=management_frame, fg_color='#E5AA70', bg_color='#F3C892', width=350, height=590, border_width=2, border_color='#834333')
         details_frame.place(x=10, y=100)
 
+        CTkLabel(master=details_frame, text='Details', text_color='#954535', font=('Dela Gothic One', 30)).place(x=100, y=2)
+
         filter_frame = CTkFrame(master=management_frame, fg_color='#E5AA70', bg_color='#F3C892', width=920, height=50, border_width=2, border_color='#834333')
         filter_frame.place(x=370, y=100)
 
-        media_frame = CTkFrame(master=management_frame, fg_color='#E5AA70', bg_color='#F3C892', width=920, height=530, border_width=2, border_color='#834333')
-        media_frame.place(x=370, y=160)
+        CTkLabel(master=filter_frame, text='Filter', text_color='#954535', font=('Dela Gothic One', 30)).place(x=50,y=2)
 
-        CTkComboBox(master=filter_frame, values= ["Title", "Genre", "Type", "Certificate", "Streaming_Platform"], state='readonly', height=30, width=200, variable=self.var_SearchBy, button_color="#207244", fg_color="#FFFFFF", border_color="#2A8C55", border_width=2, button_hover_color="#954535", dropdown_hover_color="#954535", dropdown_fg_color="#207244", dropdown_text_color="#FFFFFF", text_color="#954535", font=('Stack Sans Text', 15), justify='center', dropdown_font=('Stack Sans Text', 14)).place(x=280, y=10)
+        CTkComboBox(master=filter_frame, values=["Title", "Genre", "Type", "Certificate", "Streaming_Platform"], state='readonly', height=30, width=200, variable=self.var_SearchBy, button_color="#207244", fg_color='#F5DEB3', border_color='#834333', border_width=2, button_hover_color="#954535", dropdown_hover_color="#954535", dropdown_fg_color="#207244", dropdown_text_color="#FFFFFF", text_color="#954535", font=('Stack Sans Text', 15), justify='center', dropdown_font=('Stack Sans Text', 14)).place(x=280, y=10)
 
         self.var_SearchBy.set("Select Category")
 
-        CTkEntry(master=filter_frame, textvariable=self.var_SearchBox, height=30, width=200, placeholder_text="Search Order", font=('Stack Sans Text', 15), border_color="#2A8C55", border_width=2).place(x=490, y=10)
+        CTkEntry(master=filter_frame, textvariable=self.var_SearchBox, height=30, width=200, placeholder_text='Enter Value...',
+                                 placeholder_text_color='#C19A6B', border_width=2, fg_color='#F5DEB3', border_color='#834333', font=('Stack Sans Text', 15)).place(x=490, y=10)
 
         CTkButton(master=filter_frame, text='SEARCH', command=self.Search_Data, font=('Dela Gothic One', 12), fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=30, width=100).place(x=700, y=10)
 
         CTkButton(master=filter_frame, text='SHOW ALL', command=self.ShowAll_Data, font=('Dela Gothic One', 12),fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=30, width=100).place(x=810, y=10)
 
+        media_frame = CTkFrame(master=management_frame, fg_color='#E5AA70', bg_color='#F3C892', width=920, height=530, border_width=2, border_color='#834333')
+        media_frame.place(x=370, y=160)
 
     def SignOut(self):
         CTkMessagebox(master=self.root, title="Wyntr Streaming Service",message="Thankyou for Using Wyntr Streaming Service!", font=('Stack Sans Text', 15, 'bold'), wraplength=250, fg_color='#DAA06D',
