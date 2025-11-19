@@ -2,6 +2,7 @@ from tkinter import StringVar
 
 import pymysql, webbrowser
 from CTkMessagebox import CTkMessagebox
+from CTkTable import CTkTable
 from customtkinter import CTk, CTkLabel, CTkImage, set_appearance_mode, CTkEntry, CTkButton, CTkFrame, END, CTkComboBox
 from PIL import Image
 from dotenv import load_dotenv
@@ -254,7 +255,7 @@ class Wyntr:
         self.var_Type = StringVar()
         self.var_IMDb = StringVar()
         self.var_Certificate = StringVar()
-        self.var_Streaming_Platform = StringVar()
+        self.var_Platform = StringVar()
         self.var_Description = StringVar()
         self.var_Link = StringVar()
         self.var_SearchBy = StringVar()
@@ -282,32 +283,93 @@ class Wyntr:
                                  border_width=2, border_color='#834333')
         details_frame.place(x=10, y=100)
 
-        CTkLabel(master=details_frame, text='ID', text_color='#954535', font=('Stack Sans Text', 20, 'bold')).place(
-            x=15, y=50)
+        CTkLabel(master=details_frame, text='Details', text_color='#954535', font=('Dela Gothic One', 30)).place(x=110, y=2)
+
+        CTkLabel(master=details_frame, text='ID', text_color='#954535', font=('Stack Sans Text', 13, 'bold')).place(
+            x=15, y=45)
         ID = CTkEntry(master=details_frame, placeholder_text='Enter ID...', textvariable=self.var_ID,
                       placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
                       border_color='#834333', font=('Stack Sans Text', 15, 'bold'),
                       corner_radius=10, width=170, height=30, text_color='#834333')
-        ID.place(x=10, y=80)
+        ID.place(x=10, y=70)
 
-        CTkLabel(master=details_frame, text='Type', text_color='#954535', font=('Stack Sans Text', 20, 'bold')).place(
-            x=195, y=50)
+        CTkLabel(master=details_frame, text='Type', text_color='#954535', font=('Stack Sans Text', 13, 'bold')).place(
+            x=195, y=45)
         Type = CTkEntry(master=details_frame, placeholder_text='Enter Type...', textvariable=self.var_Type,
                         placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
                         border_color='#834333', font=('Stack Sans Text', 15, 'bold'),
                         corner_radius=10, width=170, height=30, text_color='#834333')
-        Type.place(x=190, y=80)
+        Type.place(x=190, y=70)
 
-        CTkLabel(master=details_frame, text='Title', text_color='#954535', font=('Stack Sans Text', 20, 'bold')).place(
-            x=15, y=120)
+        CTkLabel(master=details_frame, text='Title', text_color='#954535', font=('Stack Sans Text', 13, 'bold')).place(
+            x=15, y=100)
         Title = CTkEntry(master=details_frame, placeholder_text='Enter Title...', textvariable=self.var_Title,
                          placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
                          border_color='#834333', font=('Stack Sans Text', 15, 'bold'),
                          corner_radius=10, width=350, height=30, text_color='#834333')
-        Title.place(x=10, y=150)
+        Title.place(x=10, y=125)
 
-        CTkLabel(master=details_frame, text='Details', text_color='#954535', font=('Dela Gothic One', 30)).place(x=110,
-                                                                                                                 y=2)
+        CTkLabel(master=details_frame, text='Genre', text_color='#954535', font=('Stack Sans Text', 13, 'bold')).place(
+            x=15, y=155)
+        Genre = CTkEntry(master=details_frame, placeholder_text='Enter Genre...', textvariable=self.var_Genre,
+                         placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
+                         border_color='#834333', font=('Stack Sans Text', 15, 'bold'),
+                         corner_radius=10, width=170, height=30, text_color='#834333')
+        Genre.place(x=10, y=180)
+
+        CTkLabel(master=details_frame, text='IMDb', text_color='#954535', font=('Stack Sans Text', 13, 'bold')).place(
+            x=195, y=155)
+        IMDb = CTkEntry(master=details_frame, placeholder_text='Enter IMDb...', textvariable=self.var_IMDb,
+                         placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
+                         border_color='#834333', font=('Stack Sans Text', 15, 'bold'),
+                         corner_radius=10, width=170, height=30, text_color='#834333')
+        IMDb.place(x=190, y=180)
+
+        CTkLabel(master=details_frame, text='Certificate', text_color='#954535', font=('Stack Sans Text', 13, 'bold')).place(
+            x=15, y=210)
+        Certificate = CTkComboBox(master=details_frame, values=["U (Unrestricted)", "U/A (Parental Guidance)", "A (Adults)", "S (Special Class)"],
+                    state='readonly', height=30, width=170, variable=self.var_Certificate, button_color="#207244",
+                    fg_color='#F5DEB3', border_color='#834333', border_width=2, button_hover_color="#954535",
+                    dropdown_hover_color="#954535", dropdown_fg_color="#207244", dropdown_text_color="#FFFFFF",
+                    text_color="#954535", font=('Stack Sans Text', 14), justify='center',
+                    dropdown_font=('Stack Sans Text', 14))
+        Certificate.place(x=10, y=235)
+        self.var_Certificate.set("Select Certificate")
+
+        CTkLabel(master=details_frame, text='Platform', text_color='#954535', font=('Stack Sans Text', 13, 'bold')).place(
+            x=195, y=210)
+        Platform = CTkComboBox(master=details_frame, values=["Disney+", "ZEE 5", "VOOT", "Prime Video", "Netflix", "HBO Max", "Sony Liv", "Hulu", "Youtube", "Hotstar"],
+                    state='readonly', height=30, width=170, variable=self.var_Platform, button_color="#207244",
+                    fg_color='#F5DEB3', border_color='#834333', border_width=2, button_hover_color="#954535",
+                    dropdown_hover_color="#954535", dropdown_fg_color="#207244", dropdown_text_color="#FFFFFF",
+                    text_color="#954535", font=('Stack Sans Text', 14), justify='center',
+                    dropdown_font=('Stack Sans Text', 14))
+        Platform.place(x=190, y=235)
+        self.var_Platform.set("Select Platform")
+
+        CTkLabel(master=details_frame, text='Description', text_color='#954535', font=('Stack Sans Text', 13, 'bold')).place(
+            x=15, y=265)
+        Description = CTkEntry(master=details_frame, placeholder_text='Enter Description...', textvariable=self.var_Description,
+                         placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
+                         border_color='#834333', font=('Stack Sans Text', 15, 'bold'),
+                         corner_radius=10, width=350, height=30, text_color='#834333')
+        Description.place(x=10, y=290)
+
+        CTkLabel(master=details_frame, text='Link', text_color='#954535', font=('Stack Sans Text', 13, 'bold')).place(
+            x=15, y=480)
+        Link = CTkEntry(master=details_frame, placeholder_text='Enter Link...', textvariable=self.var_Link,
+                         placeholder_text_color='#C19A6B', border_width=2, fg_color='#F3C892',
+                         border_color='#834333', font=('Stack Sans Text', 15, 'bold'),
+                         corner_radius=10, width=350, height=30, text_color='#834333')
+        Link.place(x=10, y=505)
+
+        CTkButton(master=details_frame, text='SEARCH', command=self.Search_Data, font=('Dela Gothic One', 12),
+                  fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=30, width=100).place(
+            x=10, y=550)
+
+        CTkButton(master=details_frame, text='SHOW ALL', command=self.ShowAll_Data, font=('Dela Gothic One', 12),
+                  fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=30, width=100).place(
+            x=120, y=550)
 
         filter_frame = CTkFrame(master=management_frame, fg_color='#E5AA70', bg_color='#F3C892', width=900, height=50,
                                 border_width=2, border_color='#834333')
@@ -315,8 +377,7 @@ class Wyntr:
 
         CTkLabel(master=filter_frame, text='Filter', text_color='#954535', font=('Dela Gothic One', 30)).place(x=50,
                                                                                                                y=2)
-
-        CTkComboBox(master=filter_frame, values=["Title", "Genre", "Type", "Certificate", "Streaming_Platform"],
+        CTkComboBox(master=filter_frame, values=["Title", "Genre", "Type", "Certificate", "Platform"],
                     state='readonly', height=30, width=200, variable=self.var_SearchBy, button_color="#207244",
                     fg_color='#F5DEB3', border_color='#834333', border_width=2, button_hover_color="#954535",
                     dropdown_hover_color="#954535", dropdown_fg_color="#207244", dropdown_text_color="#FFFFFF",
@@ -338,9 +399,10 @@ class Wyntr:
                   fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=30, width=100).place(
             x=790, y=10)
 
-        media_frame = CTkFrame(master=management_frame, fg_color='#E5AA70', bg_color='#F3C892', width=900, height=530,
+        table_frame = CTkFrame(master=management_frame, fg_color='#E5AA70', bg_color='#F3C892', width=900, height=530,
                                border_width=2, border_color='#834333')
-        media_frame.place(x=390, y=160)
+        table_frame.place(x=390, y=160)
+
 
     def SignOut(self):
         CTkMessagebox(master=self.root, title="Wyntr Streaming Service",
@@ -395,7 +457,7 @@ class Wyntr:
                           button_color='#954535', button_hover_color='#7B3F00', border_width=3,
                           border_color='#7B3F00', text_color='#834333', title_color='#954535', icon_size=(40, 40))
 
-        elif self.var_Streaming_Platform.get() == "Select Streaming Platform":
+        elif self.var_Platform.get() == "Select Streaming Platform":
             CTkMessagebox(master=self.root, title='Wyntr Streaming Service',
                           message='Enter the Streaming Platform of Media.',
                           font=('Stack Sans Text', 15, 'bold'), wraplength=300, fg_color='#DAA06D',
@@ -444,7 +506,7 @@ class Wyntr:
                     self.var_Type.get(),
                     self.var_IMDb.get(),
                     self.var_Certificate.get(),
-                    self.var_Streaming_Platform.get(),
+                    self.var_Platform.get(),
                     self.var_Description.get(),
                     self.var_Link.get()
                 ))
@@ -469,11 +531,11 @@ class Wyntr:
         self.var_Type.set("Select Type"),
         self.var_IMDb.set(""),
         self.var_Certificate.set("Select Certificate"),
-        self.var_Streaming_Platform.set("Select Streaming Platform"),
-        self.txt_Description.delete("1", END),
+        self.var_Platform.set("Select Streaming Platform"),
+        self.var_Description.set("Write Description"),
         self.var_Link.set(""),
-        self.SearchBy_var.set("Select Category"),
-        self.txt_SearchBox.delete("0", END)
+        self.var_SearchBy.set("Select Category"),
+        self.var_SearchBox.set("")
 
     def Get_Details(self, event):
         Cursor_Row = self.Media_Table.focus()
@@ -485,7 +547,7 @@ class Wyntr:
         self.var_Type.set(row[3]),
         self.var_IMDb.set(row[4]),
         self.var_Certificate.set(row[5]),
-        self.var_Streaming_Platform.set(row[6]),
+        self.var_Platform.set(row[6]),
         self.var_Description.set()
         self.var_Link.set(row[8])
 
@@ -504,14 +566,14 @@ class Wyntr:
                                               database=os.getenv('DB_NAME'))
             cursor = MySQL_Connector.cursor()
             cursor.execute(
-                "UPDATE Media SET Title = %s, Genre = %s, Type = %s, IMDb = %s, Certificate = %s, Streaming_Platform = %s, Description = %s, Link = %s WHERE ID = %s",
+                "UPDATE Media SET Title = %s, Genre = %s, Type = %s, IMDb = %s, Certificate = %s, Platform = %s, Description = %s, Link = %s WHERE ID = %s",
                 (
                     self.var_Title.get(),
                     self.var_Genre.get(),
                     self.var_Type.get(),
                     self.var_IMDb.get(),
                     self.var_Certificate.get(),
-                    self.var_Streaming_Platform.get(),
+                    self.var_Platform.get(),
                     self.var_Description.get(),
                     self.var_Link.get(),
                     self.var_ID.get()
@@ -559,27 +621,24 @@ class Wyntr:
                                           password=os.getenv('DB_PASSWORD'),
                                           database=os.getenv('DB_NAME'))
         cursor = MySQL_Connector.cursor()
-        cursor.execute("SELECT * FROM Media")
+        cursor.execute("SELECT ID, Title, Type, Genre, Certificate, IMDb, PlatForm FROM Media")
         rows = cursor.fetchall()
-        if len(rows) != 0:
-            self.Media_Table.delete(*self.Media_Table.get_children())
-        for row in rows:
-            self.Media_Table.insert('', END, values=row)
         MySQL_Connector.commit()
         MySQL_Connector.close()
 
-        def Stream_Now(self):
+        return rows
 
-            if self.var_ID.get() == "":
-                CTkMessagebox(master=self.root, title='Wyntr Streaming Service',
+    def Stream_Now(self):
+        if self.var_ID.get() == "":
+            CTkMessagebox(master=self.root, title='Wyntr Streaming Service',
                               message='Select Media that you want to Stream.',
                               font=('Stack Sans Text', 15, 'bold'), wraplength=300, fg_color='#DAA06D',
                               icon='Icons/info.png', option_1='OKAY', option_focus=1, justify='center',
                               fade_in_duration=1,
                               button_color='#954535', button_hover_color='#7B3F00', border_width=3,
                               border_color='#7B3F00', text_color='#834333', title_color='#954535', icon_size=(40, 40))
-            else:
-                webbrowser.open(str(self.var_Link.get()), new=2)
+        else:
+            webbrowser.open(str(self.var_Link.get()), new=2)
 
     def Search_Data(self):
         if self.var_SearchBy.get() == "Select Category":
