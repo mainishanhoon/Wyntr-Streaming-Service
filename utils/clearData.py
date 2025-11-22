@@ -1,12 +1,12 @@
-def Clear_Data(app):
-    app.var_ID.set(""),
-    app.var_Title.set(""),
-    app.var_Genre.set("Select Genre"),
-    app.var_Type.set("Select Type"),
-    app.var_IMDb.set(""),
-    app.var_Certificate.set("Select Certificate"),
-    app.var_Platform.set("Select Streaming Platform"),
-    app.var_Description.set("Write Description"),
-    app.var_Link.set(""),
-    app.var_SearchBy.set("Select Category"),
-    app.var_SearchBox.set("")
+def Clear_Data(self):
+    self.var_ID.set(''),
+    self.var_Title.set(''),
+    self.var_Genre.set('Select Genre'),
+    self.var_Type.set('Select Type'),
+    self.var_IMDb.set(''),
+    self.var_Certificate.set('Select Certificate'),
+    self.var_Platform.set('Select Streaming Platform'),
+    self.var_Description.set('Write Description'),
+    self.var_Link.set(''),
+    self.var_SearchBy.set('Select Category'),
+    self.var_SearchBox.set('')

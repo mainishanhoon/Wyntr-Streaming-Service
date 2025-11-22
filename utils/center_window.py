@@ -1,9 +1,9 @@
-def CenterWindow(app, width=1300, height=700):
-    app.update_idletasks()
-    screen_w = app.winfo_screenwidth()
-    screen_h = app.winfo_screenheight()
+def Center_Window(self, width=1300, height=700):
+    self.update_idletasks()
+    screen_w = self.winfo_screenwidth()
+    screen_h = self.winfo_screenheight()
 
     x = (screen_w // 2) - (width // 2)
     y = (screen_h // 2) - (height // 2)
 
-    app.geometry(f"{width}x{height}+{x}+{y}")
+    self.geometry(f'{width}x{height}+{x}+{y}')

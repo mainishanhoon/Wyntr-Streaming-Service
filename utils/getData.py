@@ -4,18 +4,18 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-def Show_Data():
+def Get_Data():
     MySQL_Connector = pymysql.connect(host=os.getenv('DB_HOST'),
                                       user=os.getenv('DB_USER'),
                                       password=os.getenv('DB_PASSWORD'),
                                       database=os.getenv('DB_NAME'))
 
-    cursor = MySQL_Connector.cursor()
-    cursor.execute('SELECT ID, Title, Type, Genre, Certificate, IMDb, PlatForm FROM Media')
+    command = MySQL_Connector.cursor()
 
-    rows = cursor.fetchall()
+    command.execute('SELECT title, genre, type, imdb, certificate, platform FROM media')
 
-    MySQL_Connector.commit()
+    rows = command.fetchall()
+
     MySQL_Connector.close()
 
     return rows
