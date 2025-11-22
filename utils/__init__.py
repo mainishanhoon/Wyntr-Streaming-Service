@@ -18,9 +18,9 @@ def AddData(self):
     from utils.addData import Add_Data
     return Add_Data(self)
 
-def ShowData():
+def ShowData(self):
     from utils.showData import Show_Data
-    return Show_Data()
+    return Show_Data(self)
 
 def SearchData(self):
     from utils.searchData import Search_Data
@@ -38,6 +38,10 @@ def ClearData(self):
     from utils.clearData import Clear_Data
     return Clear_Data(self)
 
-def GetData():
+def GetData(self, event):
     from utils.getData import Get_Data
-    return Get_Data()
+    return Get_Data(self, event)
+
+def StreamNow(self):
+    from utils.streamNow import Stream_Now
+    return Stream_Now(self)

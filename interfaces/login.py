@@ -1,5 +1,7 @@
 from PIL import Image
 from customtkinter import CTkLabel, CTkEntry, CTkButton, CTkImage, CTkFrame
+from interfaces import RegistrationUI
+from utils import login
 
 
 def Login_Interface(self):
@@ -31,15 +33,15 @@ def Login_Interface(self):
                              corner_radius=10, width=300, height=30, text_color='#834333')
     self.password.place(x=450, y=245)
 
-    CTkButton(master=login_frame, text='LOGIN', command=self.login, font=('Dela Gothic One', 15),
+    CTkButton(master=login_frame, text='LOGIN', command=lambda: login(self), font=('Dela Gothic One', 15),
               fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=36, width=110).place(
         x=450, y=310)
 
     CTkLabel(master=login_frame, text='Don\'t Have an Account?', font=('Stack Sans Text', 15, 'bold'),
              bg_color='#E5AA70', text_color='#834333').place(x=660, y=280)
 
-    CTkButton(master=login_frame, text='SIGN UP', command=self.RegistrationUI, font=('Dela Gothic One', 15),
+    CTkButton(master=login_frame, text='SIGN UP', command=lambda: RegistrationUI(self), font=('Dela Gothic One', 15),
               fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=36, width=120).place(
         x=695, y=310)
 
-    self.root.bind('<Return>', lambda event: self.Login())
+    self.root.bind('<Return>', lambda event: login(self))

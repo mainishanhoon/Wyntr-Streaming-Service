@@ -25,19 +25,19 @@ def Registration(self):
 
         cursor = MySQL_Connector.cursor()
 
-        cursor.execute('SELECT * FROM Accounts WHERE Username = %s', self.username.get())
+        cursor.execute('SELECT * FROM account WHERE username = %s', self.username.get())
 
         UserName = cursor.fetchone()
 
         if UserName is None:
             cursor.execute(
-                'INSERT INTO Accounts (First_Name, Last_Name, Username, Email, Password) VALUES (%s,%s,%s,%s,%s)',
+                'INSERT INTO account (firstName, lastName, username, password) VALUES (%s,%s,%s,%s)',
                 (self.firstname.get(),
                  self.lastname.get(),
                  self.username.get(),
                  self.password.get()
                  ))
-            CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Enter the Required Details.',
+            CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Welcome to Wyntr Streaming Service.',
                           font=('Stack Sans Text', 15, 'bold'), wraplength=300, fg_color='#DAA06D',
                           icon='assets/icons/info.png',
                           option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1,

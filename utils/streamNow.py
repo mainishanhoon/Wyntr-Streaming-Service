@@ -1,7 +1,7 @@
 import webbrowser
 from CTkMessagebox import CTkMessagebox
 
-def StreamNow(self):
+def Stream_Now(self):
     if self.var_ID.get() == '':
         CTkMessagebox(master=self.root, title='Wyntr Streaming Service',
                       message='Select Media that you want to Stream.',

@@ -27,6 +27,8 @@ class Wyntr:
         self.var_SearchBy = StringVar()
         self.var_SearchBox = StringVar()
 
+        self.header = ["ID", "Title", "Genre", "Type", "IMDb", "Certificate", "Platform"]
+
         AdminUI(self)
 
 if __name__ == '__main__':

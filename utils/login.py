@@ -41,7 +41,7 @@ def Login(self):
 
         cursor = MySQL_Connector.cursor()
 
-        cursor.execute('SELECT * FROM Accounts WHERE Username = %s AND Password = %s',
+        cursor.execute('SELECT * FROM account WHERE username = %s AND password = %s',
                        (self.username.get(), self.password.get()))
 
         row = cursor.fetchone()

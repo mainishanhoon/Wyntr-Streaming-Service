@@ -1,6 +1,7 @@
 from PIL import Image
 from customtkinter import CTkLabel, CTkEntry, CTkButton, CTkImage, CTkFrame
-from utils.registration import Registration
+from interfaces import LoginUI
+from utils import register
 
 
 def Registration_Interface(self):
@@ -51,12 +52,12 @@ def Registration_Interface(self):
                              width=350, height=30, text_color='#834333')
     self.password.place(x=450, y=285)
 
-    CTkButton(master=registration_frame, text='REGISTER', command=self.register, font=('Dela Gothic One', 15),
+    CTkButton(master=registration_frame, text='REGISTER', command=lambda: register(self), font=('Dela Gothic One', 15),
               fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=36, width=135).place(
         x=450, y=325)
 
-    CTkButton(master=registration_frame, text='BACK', command=self.LoginUI, font=('Dela Gothic One', 15),
+    CTkButton(master=registration_frame, text='BACK', command=lambda: LoginUI(self), font=('Dela Gothic One', 15),
               fg_color='#954535', hover_color='#7B3F00', cursor='hand2', hover=True, height=36, width=120).place(
         x=680, y=325)
 
-    self.root.bind('<Return>', lambda event: Registration(self))
+    self.root.bind('<Return>', lambda event: register(self))
