@@ -20,7 +20,6 @@ from utils import (
     GetData, ShowAll,
 )
 
-
 def Admin_Interface(self):
     admin_frame = CTkFrame(
         master=self.root, fg_color="#F3C892", bg_color="#F3C892", width=1400, height=700
