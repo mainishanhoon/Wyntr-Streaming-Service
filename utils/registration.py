@@ -6,53 +6,101 @@ from interfaces.user import User_Interface
 
 load_dotenv()
 
-
 def Registration(self):
-    if self.firstname.get() == '' or self.lastname.get() == '' or self.username.get() == '' or self.password.get() == '':
-        CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Enter the Required Details.',
-                      font=('Google Sans Code Mono', 15), wraplength=500, fg_color='#DAA06D',
-                      icon='assets/icons/info.png', option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1,
-                      button_color='#7B3F00', button_hover_color='#9E5D24', border_width=3, border_color='#7B3F00',
-                      text_color='#7B3F00', title_color='#7B3F00', icon_size=(40, 40))
+    if (
+        self.firstname.get() == ""
+        or self.lastname.get() == ""
+        or self.username.get() == ""
+        or self.password.get() == ""
+    ):
+        CTkMessagebox(
+            master=self.root,
+            title="Wyntr Streaming Service",
+            message="Enter the Required Details.",
+            font=("Poppins", 14, 'bold'),
+            wraplength=400,
+            fg_color="#DAA06D",
+            icon="assets/icons/info.png",
+            option_1="OKAY",
+            option_focus=1,
+            justify="center",
+            fade_in_duration=1,
+            button_color="#7B3F00",
+            button_hover_color="#9E5D24",
+            border_width=3,
+            border_color="#7B3F00",
+            text_color="#7B3F00",
+            title_color="#7B3F00",
+            icon_size=(40, 40),
+        )
 
     else:
         MySQL_Connector = pymysql.connect(
-            host=os.getenv('DB_HOST'),
-            user=os.getenv('DB_USER'),
-            password=os.getenv('DB_PASSWORD'),
-            database=os.getenv('DB_NAME')
+            host=os.getenv("DB_HOST"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD"),
+            database=os.getenv("DB_NAME"),
         )
 
         cursor = MySQL_Connector.cursor()
 
-        cursor.execute('SELECT * FROM account WHERE username = %s', self.username.get())
+        cursor.execute("SELECT * FROM account WHERE username = %s", self.username.get())
 
         UserName = cursor.fetchone()
 
         if UserName is None:
             cursor.execute(
-                'INSERT INTO account (firstName, lastName, username, password) VALUES (%s,%s,%s,%s)',
-                (self.firstname.get(),
-                 self.lastname.get(),
-                 self.username.get(),
-                 self.password.get()
-                 ))
-            CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Welcome to Wyntr Streaming Service.',
-                          font=('Google Sans Code Mono', 15), wraplength=500, fg_color='#DAA06D',
-                          icon='assets/icons/info.png',
-                          option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1,
-                          button_color='#7B3F00', button_hover_color='#9E5D24', border_width=3,
-                          border_color='#7B3F00',
-                          text_color='#7B3F00', title_color='#7B3F00', icon_size=(40, 40))
+                "INSERT INTO account (firstName, lastName, username, password) VALUES (%s,%s,%s,%s)",
+                (
+                    self.firstname.get(),
+                    self.lastname.get(),
+                    self.username.get(),
+                    self.password.get(),
+                ),
+            )
+            CTkMessagebox(
+                master=self.root,
+                title="Wyntr Streaming Service",
+                message="Welcome to Wyntr Streaming Service.",
+                font=("Poppins", 15, 'bold'),
+        wraplength=450,
+                fg_color="#DAA06D",
+                icon="assets/icons/info.png",
+                option_1="OKAY",
+                option_focus=1,
+                justify="center",
+                fade_in_duration=1,
+                button_color="#7B3F00",
+                button_hover_color="#9E5D24",
+                border_width=3,
+                border_color="#7B3F00",
+                text_color="#7B3F00",
+                title_color="#7B3F00",
+                icon_size=(40, 40),
+            )
             User_Interface(self)
 
         else:
-            CTkMessagebox(master=self.root, title='Wyntr Streaming Service',
-                          message='Username already Exists in the DataBase.',
-                          font=('Google Sans Code Mono', 15), wraplength=500, fg_color='#DAA06D',
-                          icon='assets/icons/alert.png', option_1='Go Back', option_focus=1, justify='center',
-                          fade_in_duration=1, button_color='#7B3F00', button_hover_color='#9E5D24', border_width=3,
-                          border_color='#7B3F00', text_color='#7B3F00', title_color='#7B3F00', icon_size=(40, 40))
+            CTkMessagebox(
+                master=self.root,
+                title="Wyntr Streaming Service",
+                message="Username already Exists in the DataBase.",
+                font=("Poppins", 15, 'bold'),
+                wraplength=450,
+                fg_color="#DAA06D",
+                icon="assets/icons/alert.png",
+                option_1="Go Back",
+                option_focus=1,
+                justify="center",
+                fade_in_duration=1,
+                button_color="#7B3F00",
+                button_hover_color="#9E5D24",
+                border_width=3,
+                border_color="#7B3F00",
+                text_color="#7B3F00",
+                title_color="#7B3F00",
+                icon_size=(40, 40),
+            )
 
             self.username.delete(0, END)
 

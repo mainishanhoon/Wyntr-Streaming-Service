@@ -3,7 +3,6 @@ from customtkinter import CTkLabel, CTkEntry, CTkButton, CTkImage, CTkFrame
 from interfaces import LoginUI
 from utils import register
 
-
 def Registration_Interface(self):
     CTkLabel(
         master=self.root,
@@ -32,12 +31,13 @@ def Registration_Interface(self):
         text_color="#7B3F00",
         font=("Dela Gothic One", 50),
     ).place(x=450, y=15)
+
     CTkLabel(
         master=registration_frame,
         text="Username",
         text_color="#7B3F00",
-        font=("Stack Sans Text", 15, "bold"),
-    ).place(x=450, y=95)
+        font=("Poppins", 15, "bold"),
+    ).place(x=455, y=97)
     self.username = CTkEntry(
         master=registration_frame,
         placeholder_text="Enter Your Username...",
@@ -45,7 +45,7 @@ def Registration_Interface(self):
         border_width=2,
         fg_color="#F3C892",
         border_color="#7B3F00",
-        font=("Stack Sans Text", 15, "bold"),
+        font=("Poppins", 14, "bold"),
         corner_radius=10,
         width=350,
         height=30,
@@ -57,8 +57,8 @@ def Registration_Interface(self):
         master=registration_frame,
         text="First Name",
         text_color="#7B3F00",
-        font=("Stack Sans Text", 15, "bold"),
-    ).place(x=450, y=150)
+        font=("Poppins", 15, "bold"),
+    ).place(x=455, y=152)
     self.firstname = CTkEntry(
         master=registration_frame,
         placeholder_text="Enter Your First Name...",
@@ -66,7 +66,7 @@ def Registration_Interface(self):
         border_width=2,
         fg_color="#F3C892",
         border_color="#7B3F00",
-        font=("Stack Sans Text", 15, "bold"),
+        font=("Poppins", 14, "bold"),
         corner_radius=10,
         width=350,
         height=30,
@@ -78,8 +78,8 @@ def Registration_Interface(self):
         master=registration_frame,
         text="Last Name",
         text_color="#7B3F00",
-        font=("Stack Sans Text", 15, "bold"),
-    ).place(x=450, y=205)
+        font=("Poppins", 15, "bold"),
+    ).place(x=455, y=207)
     self.lastname = CTkEntry(
         master=registration_frame,
         placeholder_text="Enter Your Last Name...",
@@ -87,7 +87,7 @@ def Registration_Interface(self):
         border_width=2,
         fg_color="#F3C892",
         border_color="#7B3F00",
-        font=("Stack Sans Text", 15, "bold"),
+        font=("Poppins", 13, "bold"),
         corner_radius=10,
         width=350,
         height=30,
@@ -99,8 +99,8 @@ def Registration_Interface(self):
         master=registration_frame,
         text="Password",
         text_color="#7B3F00",
-        font=("Stack Sans Text", 15, "bold"),
-    ).place(x=450, y=260)
+        font=("Poppins", 15, "bold"),
+    ).place(x=455, y=262)
     self.password = CTkEntry(
         master=registration_frame,
         placeholder_text="Enter Password...",
@@ -108,7 +108,7 @@ def Registration_Interface(self):
         border_width=2,
         fg_color="#F3C892",
         border_color="#7B3F00",
-        font=("Stack Sans Text", 15, "bold"),
+        font=("Poppins", 14, "bold"),
         show="*",
         corner_radius=10,
         width=350,

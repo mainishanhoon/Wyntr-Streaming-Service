@@ -1,17 +1,17 @@
 from customtkinter import StringVar
 from customtkinter import CTk, set_appearance_mode
-from interfaces import UserUI
+from interfaces import RegistrationUI
 from utils import CenterWindow
 
 class Wyntr:
     def __init__(self, root):
         self.root = root
-        self.root.geometry('1300x700')
+        self.root.geometry("1300x700")
         self.root.resizable(False, False)
-        set_appearance_mode('light')
+        set_appearance_mode("light")
 
-        self.root.iconbitmap('assets/images/Icon.ico')
-        self.root.title('Wyntr Streaming Service')
+        self.root.iconbitmap("assets/images/Icon.ico")
+        self.root.title("Wyntr Streaming Service")
 
         CenterWindow(self.root)
 
@@ -27,12 +27,20 @@ class Wyntr:
         self.var_SearchBy = StringVar()
         self.var_SearchBox = StringVar()
 
-        self.header = ["ID", "Title", "Genre", "Type", "IMDb", "Certificate", "Platform"]
+        self.header = [
+            "ID",
+            "Title",
+            "Genre",
+            "Type",
+            "IMDb",
+            "Certificate",
+            "Platform",
+        ]
 
-        UserUI(self)
+        RegistrationUI(self)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app_root = CTk()
     app = Wyntr(app_root)
     app_root.mainloop()
-

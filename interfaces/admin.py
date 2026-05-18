@@ -88,7 +88,7 @@ def Admin_Interface(self):
         master=details_frame,
         text="ID",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 14, "bold"),
+        font=("Poppins", 14, "bold"),
     ).place(x=15, y=45)
     ID = CTkEntry(
         master=details_frame,
@@ -111,7 +111,7 @@ def Admin_Interface(self):
         master=details_frame,
         text="Type",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 14, "bold"),
+        font=("Poppins", 14, "bold"),
     ).place(x=195, y=45)
     Type = CTkComboBox(
         master=details_frame,
@@ -140,7 +140,7 @@ def Admin_Interface(self):
         master=details_frame,
         text="Title",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 14, "bold"),
+        font=("Poppins", 14, "bold"),
     ).place(x=15, y=100)
     Title = CTkEntry(
         master=details_frame,
@@ -163,7 +163,7 @@ def Admin_Interface(self):
         master=details_frame,
         text="Genre",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 14, "bold"),
+        font=("Poppins", 14, "bold"),
     ).place(x=15, y=155)
     Genre = CTkComboBox(
         master=details_frame,
@@ -203,7 +203,7 @@ def Admin_Interface(self):
         master=details_frame,
         text="IMDb",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 14, "bold"),
+        font=("Poppins", 14, "bold"),
     ).place(x=195, y=155)
     IMDb = CTkEntry(
         master=details_frame,
@@ -226,7 +226,7 @@ def Admin_Interface(self):
         master=details_frame,
         text="Certificate",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 14, "bold"),
+        font=("Poppins", 14, "bold"),
     ).place(x=15, y=210)
     Certificate = CTkComboBox(
         master=details_frame,
@@ -260,7 +260,7 @@ def Admin_Interface(self):
         master=details_frame,
         text="Platform",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 14, "bold"),
+        font=("Poppins", 14, "bold"),
     ).place(x=195, y=210)
     Platform = CTkComboBox(
         master=details_frame,
@@ -300,7 +300,7 @@ def Admin_Interface(self):
         master=details_frame,
         text="Description",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 14, "bold"),
+        font=("Poppins", 14, "bold"),
     ).place(x=15, y=265)
     self.txt_Description = CTkTextbox(
         master=details_frame,
@@ -321,7 +321,7 @@ def Admin_Interface(self):
         master=details_frame,
         text="Link",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 14, "bold"),
+        font=("Poppins", 14, "bold"),
     ).place(x=15, y=480)
     Link = CTkEntry(
         master=details_frame,

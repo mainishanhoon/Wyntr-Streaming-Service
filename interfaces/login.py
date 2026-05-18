@@ -3,7 +3,6 @@ from customtkinter import CTkLabel, CTkEntry, CTkButton, CTkImage, CTkFrame
 from interfaces import RegistrationUI
 from utils import login
 
-
 def Login_Interface(self):
     CTkLabel(
         master=self.root,
@@ -37,7 +36,7 @@ def Login_Interface(self):
         master=login_frame,
         text="Username",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 25, "bold"),
+        font=("Poppins", 25, "bold"),
     ).place(x=450, y=130)
     self.username = CTkEntry(
         master=login_frame,
@@ -46,7 +45,7 @@ def Login_Interface(self):
         border_width=2,
         fg_color="#F3C892",
         border_color="#7B3F00",
-        font=("Google Sans Code Mono", 15, "bold"),
+        font=("Poppins", 14, "bold"),
         corner_radius=10,
         width=300,
         height=30,
@@ -58,7 +57,7 @@ def Login_Interface(self):
         master=login_frame,
         text="Password",
         text_color="#7B3F00",
-        font=("Google Sans Code Mono", 25, "bold"),
+        font=("Poppins", 25, "bold"),
     ).place(x=450, y=210)
     self.password = CTkEntry(
         master=login_frame,
@@ -67,7 +66,7 @@ def Login_Interface(self):
         border_width=2,
         fg_color="#F3C892",
         border_color="#7B3F00",
-        font=("Google Sans Code Mono", 15, "bold"),
+        font=("Poppins", 14, "bold"),
         show="*",
         corner_radius=10,
         width=300,
@@ -93,10 +92,10 @@ def Login_Interface(self):
     CTkLabel(
         master=login_frame,
         text="Don't Have an Account?",
-        font=("Google Sans Code Mono", 15, "bold"),
+        font=("Poppins", 15, "bold"),
         bg_color="#E5AA70",
         text_color="#7B3F00",
-    ).place(x=660, y=280)
+    ).place(x=660, y=285)
 
     CTkButton(
         master=login_frame,
