@@ -1,31 +1,45 @@
 # Wyntr Streaming Services
+---
+
+### Accounts Table Schema 
+<p align="center">
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Account%20Table%20Schema.png" alt="Account Table Schema"/>
+</p>
+
+### Media Table Schema
+<p align="center">
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Media%20Table%20Schema.png" alt="Media Table Schema"/>
+</p>
 
 ### Registration
-![Registration](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/4e5bde68-724f-4e03-a0d0-01f84d08d50a)
+<p align="center">
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Register.png" alt="Registration Interface"/>
+</p>
 
 ### Signing In
-![Signing In](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/7fb3bba3-bc45-45dc-af5e-7dbd8dd3da5d)
-
-### Accounts Table    
-![account_table](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/abe5688a-8a05-4190-90bd-40a6b55b780f)
-
-### Media Table
-![media_table](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/3976d8a0-f381-4fe3-8b9b-c15fd4d8e7b2)
+<p align="center">
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/SignIn.png" alt="SignIn Interface"/>
+</p>
 
 ### User Interface    
-![User Interface](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/98b9dbc3-27e8-44ae-9d5a-3a9261d6a3d1)
+<p align="center">
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/User%20Interface.png" alt="User Interface"/>
+</p>
 
-### Developer Interface
-![Developer Interface](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/ebf2c8a5-b4b3-49c7-b13b-9194685c3c6d)
+### Admin Interface
+<p align="center">
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Admin%20Interface.png" alt="Admin Interface"/>
+</p>
 
-### Media Not Found
-![Media Not Found](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/56e5106c-830b-40cf-b770-1af402383a7d)
+### Search by Title
+<p align="center">
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Search%20by%20Title.png" alt="Search by Title"/>
+</p>
 
-### Fetching the URL
-![Fetching the URL](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/bd18dd1f-a78b-4c82-8419-956bc949ed0e)
-
-### Filtering on the Basis of genre
-![Filtering on the Basis of genre](https://github.com/mainishanhoon/Wyntr-Streaming-Service/assets/110257833/5ccc9e2c-8960-4842-a6f6-73cd4d53f6ef)
+### Filter by Platform
+<p align="center">
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Filter%20by%20Platform.png" alt="Filter by Platform"/>
+</p>
 
 ## To run this Application in your System follow the given steps:
 **• Clone the repository.**
