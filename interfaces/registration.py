@@ -34,31 +34,10 @@ def Registration_Interface(self):
 
     CTkLabel(
         master=registration_frame,
-        text="Username",
-        text_color="#7B3F00",
-        font=("Poppins", 15, "bold"),
-    ).place(x=455, y=97)
-    self.username = CTkEntry(
-        master=registration_frame,
-        placeholder_text="Enter Your Username...",
-        placeholder_text_color="#C19A6B",
-        border_width=2,
-        fg_color="#F3C892",
-        border_color="#7B3F00",
-        font=("Poppins", 14, "bold"),
-        corner_radius=10,
-        width=350,
-        height=30,
-        text_color="#7B3F00",
-    )
-    self.username.place(x=450, y=120)
-
-    CTkLabel(
-        master=registration_frame,
         text="First Name",
         text_color="#7B3F00",
         font=("Poppins", 15, "bold"),
-    ).place(x=455, y=152)
+    ).place(x=455, y=97)
     self.firstname = CTkEntry(
         master=registration_frame,
         placeholder_text="Enter Your First Name...",
@@ -72,14 +51,14 @@ def Registration_Interface(self):
         height=30,
         text_color="#7B3F00",
     )
-    self.firstname.place(x=450, y=175)
+    self.firstname.place(x=450, y=120)
 
     CTkLabel(
         master=registration_frame,
         text="Last Name",
         text_color="#7B3F00",
         font=("Poppins", 15, "bold"),
-    ).place(x=455, y=207)
+    ).place(x=455, y=152)
     self.lastname = CTkEntry(
         master=registration_frame,
         placeholder_text="Enter Your Last Name...",
@@ -87,13 +66,34 @@ def Registration_Interface(self):
         border_width=2,
         fg_color="#F3C892",
         border_color="#7B3F00",
-        font=("Poppins", 13, "bold"),
+        font=("Poppins", 14, "bold"),
         corner_radius=10,
         width=350,
         height=30,
         text_color="#7B3F00",
     )
-    self.lastname.place(x=450, y=230)
+    self.lastname.place(x=450, y=175)
+
+    CTkLabel(
+        master=registration_frame,
+        text="Username",
+        text_color="#7B3F00",
+        font=("Poppins", 15, "bold"),
+    ).place(x=455, y=207)
+    self.username = CTkEntry(
+        master=registration_frame,
+        placeholder_text="Enter Your Username...",
+        placeholder_text_color="#C19A6B",
+        border_width=2,
+        fg_color="#F3C892",
+        border_color="#7B3F00",
+        font=("Poppins", 14, "bold"),
+        corner_radius=10,
+        width=350,
+        height=30,
+        text_color="#7B3F00",
+    )
+    self.username.place(x=450, y=230)
 
     CTkLabel(
         master=registration_frame,

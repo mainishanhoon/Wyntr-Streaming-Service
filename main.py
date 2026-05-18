@@ -1,6 +1,6 @@
 from customtkinter import StringVar
 from customtkinter import CTk, set_appearance_mode
-from interfaces import RegistrationUI
+from interfaces import AdminUI
 from utils import CenterWindow
 
 class Wyntr:
@@ -37,7 +37,7 @@ class Wyntr:
             "Platform",
         ]
 
-        RegistrationUI(self)
+        AdminUI(self)
 
 
 if __name__ == "__main__":
