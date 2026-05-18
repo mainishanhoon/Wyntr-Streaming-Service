@@ -1,52 +1,52 @@
 # Wyntr Streaming Services
----
 
 ### Accounts Table Schema 
 <p align="center">
- <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Account%20Table%20Schema.png" alt="Account Table Schema"/>
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/previews/Wyntr%202.0/Account%20Table%20Schema.png" alt="Account Table Schema"/>
 </p>
 
 ### Media Table Schema
 <p align="center">
- <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Media%20Table%20Schema.png" alt="Media Table Schema"/>
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/previews/Wyntr%202.0/Media%20Table%20Schema.png" alt="Media Table Schema"/>
 </p>
 
 ### Registration
 <p align="center">
- <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Register.png" alt="Registration Interface"/>
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/previews/Wyntr%202.0/Register.png" alt="Registration Interface"/>
 </p>
 
 ### Signing In
 <p align="center">
- <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/SignIn.png" alt="SignIn Interface"/>
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/previews/Wyntr%202.0/SignIn.png" alt="SignIn Interface"/>
 </p>
 
 ### User Interface    
 <p align="center">
- <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/User%20Interface.png" alt="User Interface"/>
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/previews/Wyntr%202.0/User%20Interface.png" alt="User Interface"/>
 </p>
 
 ### Admin Interface
 <p align="center">
- <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Admin%20Interface.png" alt="Admin Interface"/>
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/previews/Wyntr%202.0/Admin%20Interface.png" alt="Admin Interface"/>
 </p>
 
 ### Search by Title
 <p align="center">
- <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Search%20by%20Title.png" alt="Search by Title"/>
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/previews/Wyntr%202.0/Search%20by%20Title.png" alt="Search by Title"/>
 </p>
 
 ### Filter by Platform
 <p align="center">
- <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/Preview/Wyntr%202.0/Filter%20by%20Platform.png" alt="Filter by Platform"/>
+ <img src="https://github.com/mainishanhoon/Wyntr-Streaming-Service/blob/main/previews/Wyntr%202.0/Filter%20by%20Platform.png" alt="Filter by Platform"/>
 </p>
 
-## To run this Application in your System follow the given steps:
+## To run this application on your system, follow the steps below:
+
 **• Clone the repository.**
 ``` console
 https://github.com/mainishanhoon/Wyntr-Streaming-Service.git
 ```
-**• Install all the Fonts that are present in the 'Fonts' Folder.**
+**• Install all the fonts that are present in the 'assets/fonts' folder.**
 
 **• Now, install all the required libraries to run the project.**
 ``` console
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 
 **• In .env file, replace the variables in the .env file to add an ADMIN and establish connection between MySQL & Python.**
 
-**• Paste these lines into your MySQL Command Line Client.**
+**• Paste these lines into your MySQL Command Line Client.**
 ``` sql
 CREATE DATABASE `Detail`;
 
