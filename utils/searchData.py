@@ -10,18 +10,18 @@ def Search_Data(self):
     if self.var_SearchBy.get() == 'Select Category':
         CTkMessagebox(master=self.root, title='Wyntr Streaming Service',
                       message='On What Basis You Wanna Filter the List.',
-                      font=('Stack Sans Text', 15, 'bold'), wraplength=300, fg_color='#DAA06D',
+                      font=('Google Sans Code Mono', 15), wraplength=500, fg_color='#DAA06D',
                       icon='assets/icons/info.png', option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1,
-                      button_color='#954535', button_hover_color='#7B3F00', border_width=3,
-                      border_color='#7B3F00', text_color='#834333', title_color='#954535', icon_size=(40, 40))
+                      button_color='#7B3F00', button_hover_color='#9E5D24', border_width=3,
+                      border_color='#7B3F00', text_color='#7B3F00', title_color='#7B3F00', icon_size=(40, 40))
 
     elif self.var_SearchBox.get() == '':
         CTkMessagebox(master=self.root, title='Wyntr Streaming Service',
                       message='Search Box is Empty.',
-                      font=('Stack Sans Text', 15, 'bold'), wraplength=300, fg_color='#DAA06D',
+                      font=('Google Sans Code Mono', 15), wraplength=500, fg_color='#DAA06D',
                       icon='assets/icons/info.png', option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1,
-                      button_color='#954535', button_hover_color='#7B3F00', border_width=3,
-                      border_color='#7B3F00', text_color='#834333', title_color='#954535', icon_size=(40, 40))
+                      button_color='#7B3F00', button_hover_color='#9E5D24', border_width=3,
+                      border_color='#7B3F00', text_color='#7B3F00', title_color='#7B3F00', icon_size=(40, 40))
 
     else:
         MySQL_Connector = pymysql.connect(host=os.getenv('DB_HOST'),
@@ -31,32 +31,37 @@ def Search_Data(self):
 
         cursor = MySQL_Connector.cursor()
 
-        query = f"SELECT title, type, genre, certificate, imdb, platForm FROM media WHERE {self.var_SearchBy.get()} LIKE %s"
+        query = f"SELECT mediaId, title, genre, type, imdb, certificate, platform, description, link FROM media WHERE {self.var_SearchBy.get()} LIKE %s"
 
         cursor.execute(query, ("%" + self.var_SearchBox.get() + "%",))
 
-        data = cursor.fetchall()
+        raw_data = cursor.fetchall()
 
-        data = [list(row) for row in data]
+        if raw_data:
+            self.full_data_records = [list(row) for row in raw_data]
 
-        if data:
+            ui_rows = [list(row)[:7] for row in raw_data]
+
             self.Media_Table.delete_rows(range(self.Media_Table.rows))
+
             self.Media_Table.add_row(self.header)
 
-            for row_data in data:
+            column_widths = [50, 250, 50, 60, 50, 50, 60]
+
+            for col, w in enumerate(column_widths):
+                self.Media_Table.edit_column(col, width=w)
+
+            for row_data in ui_rows:
                 self.Media_Table.add_row(row_data)
 
         else:
-            CTkMessagebox(master=self.root, title='Wyntr Streaming Service',
-                          message='Oops!! No Data Found.',
-                          font=('Stack Sans Text', 15, 'bold'), wraplength=350, fg_color='#DAA06D',
-                          icon='assets/icons/info.png',
-                          option_1='OKAY', option_focus=1, justify='center', fade_in_duration=1, button_color='#954535',
-                          button_hover_color='#7B3F00', border_width=3, border_color='#7B3F00', text_color='#834333',
-                          title_color='#954535', icon_size=(40, 40))
+            CTkMessagebox(master=self.root, title='Wyntr Streaming Service', message='Oops!! No Data Found.',
+                          font=('Google Sans Code Mono', 15), wraplength=500, fg_color='#DAA06D',
+                          icon='assets/icons/info.png', option_1='OKAY', option_focus=1, justify='center',
+                          fade_in_duration=1,
+                          button_color='#7B3F00', button_hover_color='#9E5D24', border_width=3,
+                          border_color='#7B3F00', text_color='#7B3F00', title_color='#7B3F00', icon_size=(40, 40))
 
         ClearData(self)
-
-        MySQL_Connector.commit()
 
         MySQL_Connector.close()

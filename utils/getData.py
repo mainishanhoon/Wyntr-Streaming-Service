@@ -1,20 +1,19 @@
-def Get_Data(self, event=None):
-    selected = self.Media_Table.get_selected_row()
-    print("Selected row:", selected)
+def Get_Data(self, data):
+    row_idx = data.get("row")
 
-    if selected is None or selected["row_index"] is None:
+    if row_idx == 0 or row_idx is None:
         return
 
-    row_values = selected["values"]
+    actual_record = self.full_data_records[row_idx - 1]
 
-    print("Selected row:", row_values)
+    self.var_ID.set(actual_record[0])
+    self.var_Title.set(actual_record[1])
+    self.var_Genre.set(actual_record[2])
+    self.var_Type.set(actual_record[3])
+    self.var_IMDb.set(actual_record[4])
+    self.var_Certificate.set(actual_record[5])
+    self.var_Platform.set(actual_record[6])
+    self.txt_Description.delete("1.0", "end")
+    self.txt_Description.insert("1.0", actual_record[7])
+    self.var_Link.set(actual_record[8])
 
-    self.var_ID.set(row_values[0])
-    self.var_Title.set(row_values[1])
-    self.var_Genre.set(row_values[2])
-    self.var_Type.set(row_values[3])
-    self.var_IMDb.set(row_values[4])
-    self.var_Certificate.set(row_values[5])
-    self.var_Platform.set(row_values[6])
-    self.var_Description.set(row_values[7])
-    self.var_Link.set(row_values[8])

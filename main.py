@@ -1,6 +1,6 @@
 from customtkinter import StringVar
 from customtkinter import CTk, set_appearance_mode
-from interfaces import AdminUI
+from interfaces import UserUI
 from utils import CenterWindow
 
 class Wyntr:
@@ -22,14 +22,14 @@ class Wyntr:
         self.var_IMDb = StringVar()
         self.var_Certificate = StringVar()
         self.var_Platform = StringVar()
-        self.var_Description = StringVar()
+        self.txt_Description = StringVar()
         self.var_Link = StringVar()
         self.var_SearchBy = StringVar()
         self.var_SearchBox = StringVar()
 
         self.header = ["ID", "Title", "Genre", "Type", "IMDb", "Certificate", "Platform"]
 
-        AdminUI(self)
+        UserUI(self)
 
 if __name__ == '__main__':
     app_root = CTk()

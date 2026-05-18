@@ -6,7 +6,7 @@ def Clear_Data(self):
     self.var_IMDb.set(''),
     self.var_Certificate.set('Select Certificate'),
     self.var_Platform.set('Select Streaming Platform'),
-    self.var_Description.set('Write Description'),
+    self.txt_Description.delete("1.0", "end"),
     self.var_Link.set(''),
     self.var_SearchBy.set('Select Category'),
     self.var_SearchBox.set('')
